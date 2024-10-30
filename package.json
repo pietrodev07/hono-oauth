@@ -1,0 +1,36 @@
+{
+  "name": "hono-oauth",
+  "type": "module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc && tsc-alias",
+    "seed": "tsx src/database/seed.ts",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.2",
+    "@hono/oauth-providers": "^0.6.2",
+    "@hono/zod-openapi": "^0.16.4",
+    "@scalar/hono-api-reference": "^0.5.156",
+    "bcrypt": "^5.1.1",
+    "hono": "^4.6.7",
+    "react": "^18.3.1",
+    "resend": "4.0.1-alpha.0",
+    "stoker": "^1.2.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "@types/react": "^18.3.12",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "kittylog": "^1.0.6",
+    "prettier": "^3.3.3",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}

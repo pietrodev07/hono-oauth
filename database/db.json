@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": "0.8693569513591244",
+      "username": "pietrodev07",
+      "email": "6S1wjT9Dut8aFyxFHKnow/FMvO00Oe2Z9zzBkQ+ADZ8=",
+      "password": "$2b$10$n1Uumn/HjPDzfF2d7srDquSTlTTRujdnmSfxTjcQ6S9Hi8OTvSENC",
+      "verified": true,
+      "type": "credentials",
+      "currentResetToken": ""
+    }
+  ]
+}
