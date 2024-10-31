@@ -15,3 +15,9 @@ export const authResponses = {
   passwordChanged: res(true, "Password changed successfully!"),
   notValid: res(false, "Something went wrong!"),
 };
+
+export const generalResponses = {
+  hello: res(true, "Hello from elections maker api!"),
+  endpointNotFound: res(false, "Api endpoint not found!"),
+  internalServerError: res(false, "Internal Server Error!"),
+};
