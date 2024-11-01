@@ -13,7 +13,6 @@ const seedDatabase = () => {
         email: encrypt("pietro.dev.07@gmail.com"),
         password: hash("pietrodev07"),
         verified: true,
-        type: "credentials",
         currentResetToken: "",
       },
     ],
