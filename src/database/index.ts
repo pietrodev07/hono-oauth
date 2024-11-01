@@ -1,5 +1,4 @@
 import { join } from "path";
-import { AuthType } from "@/types";
 import { readFileSync, writeFileSync } from "fs";
 
 export type User = {
@@ -8,7 +7,6 @@ export type User = {
   email: string;
   password: string;
   verified: boolean;
-  type: AuthType;
   currentResetToken: string;
 };
 
@@ -19,14 +17,14 @@ const jsonData = readFileSync(dbPath, "utf-8");
 const db = JSON.parse(jsonData) as Database;
 
 export const usersRepo = {
-  findById: (id: string, type: AuthType = "credentials") => {
-    return db.users.find((user) => user.id === id && user.type === type);
+  findById: (id: string) => {
+    return db.users.find((user) => user.id === id);
   },
-  findByEmail: (email: string, type: AuthType = "credentials") => {
-    return db.users.find((user) => user.email === email && user.type === type);
+  findByEmail: (email: string) => {
+    return db.users.find((user) => user.email === email);
   },
-  findByUsername: (username: string, type: AuthType = "credentials") => {
-    return db.users.find((user) => user.username === username && user.type === type);
+  findByUsername: (username: string) => {
+    return db.users.find((user) => user.username === username);
   },
   create: (user: User) => {
     db.users.push(user);

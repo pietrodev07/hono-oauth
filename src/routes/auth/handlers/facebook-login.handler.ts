@@ -12,14 +12,13 @@ export const facebookLogin: Handler = async (c) => {
   const user = c.get("user-facebook");
 
   const encryptedEmail = encrypt(user?.email || "");
-  let fetchedUser = usersRepo.findByEmail(encryptedEmail, "facebook");
+  let fetchedUser = usersRepo.findByEmail(encryptedEmail);
 
   if (!fetchedUser) {
     fetchedUser = usersRepo.create({
       id: Math.random().toString(),
       username: user?.name || "",
       email: encryptedEmail,
-      type: "facebook",
       currentResetToken: "",
       password: "",
       verified: true,

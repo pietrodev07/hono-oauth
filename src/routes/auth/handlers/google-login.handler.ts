@@ -12,14 +12,13 @@ export const googleLogin: Handler = async (c) => {
   const user = c.get("user-google");
 
   const encryptedEmail = encrypt(user?.email || "");
-  let fetchedUser = usersRepo.findByEmail(encryptedEmail, "google");
+  let fetchedUser = usersRepo.findByEmail(encryptedEmail);
 
   if (!fetchedUser) {
     fetchedUser = usersRepo.create({
       id: Math.random().toString(),
       username: user?.name || "",
       email: encryptedEmail,
-      type: "google",
       currentResetToken: "",
       password: "",
       verified: true,
